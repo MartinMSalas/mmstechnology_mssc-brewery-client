@@ -1,0 +1,1 @@
+package com.mmstechnology.mssc_brewery_client.web.client;

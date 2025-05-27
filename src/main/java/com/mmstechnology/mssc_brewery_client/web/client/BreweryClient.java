@@ -29,5 +29,8 @@ public class BreweryClient {
         return restTemplate.getForObject(apiHost + BEER_PATH_V1 + "/" + beerId.toString(), BeerRecord.class);
     }
 
+    public BeerRecord saveNewBeer(BeerRecord beerRecord) {
+        return restTemplate.postForObject(apiHost + BEER_PATH_V1, beerRecord, BeerRecord.class);
+    }
 
 }

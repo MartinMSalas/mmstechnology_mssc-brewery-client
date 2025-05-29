@@ -33,4 +33,12 @@ public class BreweryClient {
         return restTemplate.postForObject(apiHost + BEER_PATH_V1, beerRecord, BeerRecord.class);
     }
 
+
+    public void updateBeer(UUID beerId, BeerRecord beerRecord) {
+        String url = apiHost + BEER_PATH_V1 + "/" + beerId;
+        restTemplate.put(url, beerRecord);
+    }
+    public void deleteBeer(UUID beerId) {
+        restTemplate.delete(apiHost + BEER_PATH_V1 + "/" + beerId.toString());
+    }
 }
